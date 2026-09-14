@@ -1,0 +1,15 @@
+import { Bell, ChevronRight, LockKeyhole, Moon, ShieldCheck, Smartphone, UserRound } from 'lucide-react'
+
+const settings = [
+  { icon: UserRound, title: 'Personal details', description: 'Name, email, and account information' },
+  { icon: LockKeyhole, title: 'Password & authentication', description: 'Password, two-factor authentication, and sessions' },
+  { icon: Bell, title: 'Notifications', description: 'Choose when Vaultline should reach out' },
+  { icon: Moon, title: 'Appearance', description: 'Theme and display preferences' },
+]
+
+export function SettingsPage() {
+  return <>
+    <div className="mb-7"><p className="eyebrow">Account center</p><h1 className="mt-2 font-display text-2xl font-bold tracking-[-.04em] text-white">Settings</h1><p className="mt-1 text-sm text-muted">Keep your Vaultline experience yours.</p></div>
+    <div className="grid gap-5 xl:grid-cols-[1.2fr_.8fr]"><div className="panel overflow-hidden"><div className="border-b border-line px-5 py-4"><p className="eyebrow">Preferences</p><h2 className="mt-1 font-display text-base font-bold text-white">Account settings</h2></div>{settings.map(({ icon: Icon, title, description }) => <button key={title} className="flex w-full items-center gap-4 border-b border-line px-5 py-4 text-left transition last:border-0 hover:bg-[#111d2b]"><span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#172537] text-muted"><Icon size={18} /></span><span className="min-w-0 flex-1"><span className="block text-sm font-bold text-white">{title}</span><span className="mt-1 block text-xs text-muted">{description}</span></span><ChevronRight size={16} className="text-muted" /></button>)}</div><div className="space-y-5"><div className="rounded-2xl border border-[#30483a] bg-[#10231e] p-5"><div className="flex items-start justify-between"><div className="grid h-10 w-10 place-items-center rounded-xl bg-aqua/10 text-aqua"><ShieldCheck size={19} /></div><span className="rounded-full bg-aqua/10 px-2.5 py-1 text-[10px] font-bold text-aqua">Protected</span></div><h2 className="mt-5 font-display text-lg font-bold text-white">Security overview</h2><p className="mt-2 text-xs leading-5 text-[#91ada4]">Your account has the recommended security settings enabled.</p><div className="mt-5 space-y-3"><div className="flex items-center justify-between text-xs"><span className="flex items-center gap-2 text-[#c0d6d0]"><Smartphone size={14} />Two-factor authentication</span><span className="font-bold text-aqua">On</span></div><div className="flex items-center justify-between text-xs"><span className="flex items-center gap-2 text-[#c0d6d0]"><LockKeyhole size={14} />Withdrawal protection</span><span className="font-bold text-aqua">On</span></div></div></div><div className="panel p-5"><p className="eyebrow">Need help?</p><h2 className="mt-2 font-display text-base font-bold text-white">We’re here for you.</h2><p className="mt-1 text-xs leading-5 text-muted">Our support team is available around the clock.</p><button className="mt-4 flex items-center gap-1 text-xs font-bold text-lime">Contact support <ChevronRight size={14} /></button></div></div></div>
+  </>
+}

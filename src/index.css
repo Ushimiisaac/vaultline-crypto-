@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #f2f6fb;
+  background: #080d16;
+  font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #080d16; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+::selection { background: rgba(199,243,107,.22); color: #fff; }
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-line bg-panel;
+    box-shadow: 0 12px 34px rgba(0,0,0,.12);
+  }
+  .eyebrow {
+    @apply text-[10px] font-bold uppercase tracking-[.2em] text-muted;
+  }
+  .icon-button {
+    @apply grid h-9 w-9 place-items-center rounded-xl border border-line text-muted transition-colors hover:border-[#33455e] hover:bg-[#152033] hover:text-white;
+  }
+}
